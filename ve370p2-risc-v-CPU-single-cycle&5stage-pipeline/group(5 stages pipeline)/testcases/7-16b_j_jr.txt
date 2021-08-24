@@ -1,0 +1,149 @@
+	03c00513	//	addi	x10	x0	60	
+	13	//	nop				
+	13	//	nop				
+	02a50063	//	beq	x10	x10	32	<jump>
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<not_run>:	//					
+	13	//	nop				
+	13	//	nop				
+	06400d93	//	addi	x27	x0	100	
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<jump>:	//					
+	05000d93	//	addi	x27	x0	80	
+	13	//	nop				
+	13	//	nop				
+	2055063	//	bge	x10	x0	32	<jump2>
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<not_run2>:	//					
+	13	//	nop				
+	13	//	nop				
+	06e00e13	//	addi	x28	x0	110	
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<jump2>:	//					
+	05a00e13	//	addi	x28	x0	90	
+	13	//	nop				
+	13	//	nop				
+	02a04063	//	blt	x0	x10	32	<jump3>
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<not_run3>:	//					
+	13	//	nop				
+	13	//	nop				
+	07000d13	//	addi	x26	x0	112	
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<jump3>:	//					
+	06200d13	//	addi	x26	x0	98	
+	13	//	nop				
+	13	//	nop				
+	2051063	//	bne	x10	x0	32	<jump4>
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<not_run4>:	//					
+	13	//	nop				
+	13	//	nop				
+	0bc00c93	//	addi	x25	x0	188	
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<jump4>:	//					
+	05300c93	//	addi	x25	x0	83	
+	13	//	nop				
+	13	//	nop				
+	2050063	//	beq	x10	x0	32	<jump_>
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<not_run_>:	//					
+	13	//	nop				
+	13	//	nop				
+	6400893	//	addi	x17	x0	100	
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<jump_>:	//					
+	3500893	//	addi	x17	x0	53	
+	13	//	nop				
+	13	//	nop				
+	02a05063	//	bge	x0	x10	32	<jump2_>
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<not_run2_>:	//					
+	13	//	nop				
+	13	//	nop				
+	06e00913	//	addi	x18	x0	110	
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<jump2_>:	//					
+	02b00913	//	addi	x18	x0	43	
+	13	//	nop				
+	13	//	nop				
+	2054063	//	blt	x10	x0	32	<jump3_>
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<not_run3_>:	//					
+	13	//	nop				
+	13	//	nop				
+	7000813	//	addi	x16	x0	112	
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<jump3_>:	//					
+	2100813	//	addi	x16	x0	33	
+	13	//	nop				
+	13	//	nop				
+	02a51063	//	bne	x10	x10	32	<jump4_>
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<not_run4_>:	//					
+	13	//	nop				
+	13	//	nop				
+	0bc00793	//	addi	x15	x0	188	
+	13	//	nop				
+	13	//	nop				
+		//					
+//	<jump4_>:	//					
+	1700793	//	addi	x15	x0	23	
+	01c0006f	//	jal	x0	0x180	<bigjump>	
+	6400493	//	addi	x9	x0	100	
+	6400493	//	addi	x9	x0	100	
+	6400493	//	addi	x9	x0	100	
+	6400493	//	addi	x9	x0	100	
+	6400493	//	addi	x9	x0	100	
+	6400493	//	addi	x9	x0	100	
+		//					
+//	<bigjump>:	//					
+	6300493	//	addi	x9	x0	99	
+	02c000ef	//	jal	x1	0x1b0	<exit>	
+	6400493	//	addi	x9	x0	100	
+	6400493	//	addi	x9	x0	100	
+	6400493	//	addi	x9	x0	100	
+	6400493	//	addi	x9	x0	100	
+	6400493	//	addi	x9	x0	100	
+	6300493	//	addi	x9	x0	99	
+	0180006f	//	jal	x0	0x1b8	<exit2>	
+	13	//	nop				
+	6400313	//	addi	x6	x0	100	
+	6400493	//	addi	x9	x0	100	
+		//					
+//	<exit>:	//					
+	13	//	nop				
+	8067	//	jalr	x0	x1	0	
+		//					
+//	<exit2>:	//					
+	13	//	nop				
