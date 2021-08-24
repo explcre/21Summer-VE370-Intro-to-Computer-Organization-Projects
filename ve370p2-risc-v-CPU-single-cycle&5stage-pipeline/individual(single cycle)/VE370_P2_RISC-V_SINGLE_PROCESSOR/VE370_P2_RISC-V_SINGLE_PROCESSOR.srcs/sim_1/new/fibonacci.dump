@@ -1,0 +1,134 @@
+
+fibonacci:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <hart_init>:
+   0:	00000013          	addi	zero,zero,0
+   4:	00000013          	addi	zero,zero,0
+   8:	00000013          	addi	zero,zero,0
+   c:	0040006f          	jal	zero,10 <hart0>
+
+00000010 <hart0>:
+  10:	00000013          	addi	zero,zero,0
+  14:	00000093          	addi	ra,zero,0
+  18:	00004137          	lui	sp,0x4
+  1c:	ffc10113          	addi	sp,sp,-4 # 3ffc <__global_pointer$+0x3620>
+  20:	00000193          	addi	gp,zero,0
+  24:	00000213          	addi	tp,zero,0
+  28:	00000293          	addi	t0,zero,0
+  2c:	00000313          	addi	t1,zero,0
+  30:	00000393          	addi	t2,zero,0
+  34:	00000413          	addi	s0,zero,0
+  38:	00000513          	addi	a0,zero,0
+  3c:	00000593          	addi	a1,zero,0
+  40:	00000613          	addi	a2,zero,0
+  44:	00000693          	addi	a3,zero,0
+  48:	00000713          	addi	a4,zero,0
+  4c:	00000793          	addi	a5,zero,0
+  50:	00000813          	addi	a6,zero,0
+  54:	00000893          	addi	a7,zero,0
+  58:	00000913          	addi	s2,zero,0
+  5c:	00000993          	addi	s3,zero,0
+  60:	00000a13          	addi	s4,zero,0
+  64:	00000a93          	addi	s5,zero,0
+  68:	00000b13          	addi	s6,zero,0
+  6c:	00000b93          	addi	s7,zero,0
+  70:	00000c13          	addi	s8,zero,0
+  74:	00000c93          	addi	s9,zero,0
+  78:	00000d13          	addi	s10,zero,0
+  7c:	00000d93          	addi	s11,zero,0
+  80:	00000e13          	addi	t3,zero,0
+  84:	00000e93          	addi	t4,zero,0
+  88:	00000f13          	addi	t5,zero,0
+  8c:	00000f93          	addi	t6,zero,0
+  90:	00000097          	auipc	ra,0x0
+  94:	0d4080e7          	jalr	ra,212(ra) # 164 <main>
+  98:	00000013          	addi	zero,zero,0
+  9c:	00050493          	addi	s1,a0,0
+  a0:	00000013          	addi	zero,zero,0
+  a4:	00000013          	addi	zero,zero,0
+  a8:	00000013          	addi	zero,zero,0
+  ac:	00000013          	addi	zero,zero,0
+  b0:	00000097          	auipc	ra,0x0
+  b4:	000080e7          	jalr	ra,0(ra) # b0 <hart0+0xa0>
+  b8:	00000013          	addi	zero,zero,0
+  bc:	00000013          	addi	zero,zero,0
+  c0:	00000013          	addi	zero,zero,0
+  c4:	00000013          	addi	zero,zero,0
+
+000000c8 <fib>:
+  c8:	fe010113          	addi	sp,sp,-32
+  cc:	00112e23          	sw	ra,28(sp)
+  d0:	00812c23          	sw	s0,24(sp)
+  d4:	00912a23          	sw	s1,20(sp)
+  d8:	02010413          	addi	s0,sp,32
+  dc:	fea42623          	sw	a0,-20(s0)
+  e0:	fec42703          	lw	a4,-20(s0)
+  e4:	00100793          	addi	a5,zero,1
+  e8:	00e7c663          	blt	a5,a4,f4 <fib+0x2c>
+  ec:	fec42783          	lw	a5,-20(s0)
+  f0:	0380006f          	jal	zero,128 <fib+0x60>
+  f4:	fec42783          	lw	a5,-20(s0)
+  f8:	fff78793          	addi	a5,a5,-1
+  fc:	00078513          	addi	a0,a5,0
+ 100:	00000097          	auipc	ra,0x0
+ 104:	fc8080e7          	jalr	ra,-56(ra) # c8 <fib>
+ 108:	00050493          	addi	s1,a0,0
+ 10c:	fec42783          	lw	a5,-20(s0)
+ 110:	ffe78793          	addi	a5,a5,-2
+ 114:	00078513          	addi	a0,a5,0
+ 118:	00000097          	auipc	ra,0x0
+ 11c:	fb0080e7          	jalr	ra,-80(ra) # c8 <fib>
+ 120:	00050793          	addi	a5,a0,0
+ 124:	00f487b3          	add	a5,s1,a5
+ 128:	00078513          	addi	a0,a5,0
+ 12c:	01c12083          	lw	ra,28(sp)
+ 130:	01812403          	lw	s0,24(sp)
+ 134:	01412483          	lw	s1,20(sp)
+ 138:	02010113          	addi	sp,sp,32
+ 13c:	00008067          	jalr	zero,0(ra)
+
+00000140 <return_function>:
+ 140:	fe010113          	addi	sp,sp,-32
+ 144:	00812e23          	sw	s0,28(sp)
+ 148:	02010413          	addi	s0,sp,32
+ 14c:	fea42623          	sw	a0,-20(s0)
+ 150:	fec42783          	lw	a5,-20(s0)
+ 154:	00078513          	addi	a0,a5,0
+ 158:	01c12403          	lw	s0,28(sp)
+ 15c:	02010113          	addi	sp,sp,32
+ 160:	00008067          	jalr	zero,0(ra)
+
+00000164 <main>:
+ 164:	fe010113          	addi	sp,sp,-32
+ 168:	00112e23          	sw	ra,28(sp)
+ 16c:	00812c23          	sw	s0,24(sp)
+ 170:	02010413          	addi	s0,sp,32
+ 174:	00800793          	addi	a5,zero,8
+ 178:	fef42623          	sw	a5,-20(s0)
+ 17c:	fec42503          	lw	a0,-20(s0)
+ 180:	00000097          	auipc	ra,0x0
+ 184:	f48080e7          	jalr	ra,-184(ra) # c8 <fib>
+ 188:	00050793          	addi	a5,a0,0
+ 18c:	00078513          	addi	a0,a5,0
+ 190:	00000097          	auipc	ra,0x0
+ 194:	fb0080e7          	jalr	ra,-80(ra) # 140 <return_function>
+ 198:	fea42423          	sw	a0,-24(s0)
+ 19c:	fe842783          	lw	a5,-24(s0)
+ 1a0:	00078513          	addi	a0,a5,0
+ 1a4:	01c12083          	lw	ra,28(sp)
+ 1a8:	01812403          	lw	s0,24(sp)
+ 1ac:	02010113          	addi	sp,sp,32
+ 1b0:	00008067          	jalr	zero,0(ra)
+ 1b4:	00000013          	addi	zero,zero,0
+ 1b8:	00000013          	addi	zero,zero,0
+ 1bc:	00000013          	addi	zero,zero,0
+ 1c0:	00000013          	addi	zero,zero,0
+ 1c4:	00000097          	auipc	ra,0x0
+ 1c8:	000080e7          	jalr	ra,0(ra) # 1c4 <main+0x60>
+ 1cc:	00000013          	addi	zero,zero,0
+ 1d0:	00000013          	addi	zero,zero,0
+ 1d4:	00000013          	addi	zero,zero,0
+ 1d8:	00000013          	addi	zero,zero,0
