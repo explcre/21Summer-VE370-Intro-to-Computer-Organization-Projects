@@ -9,7 +9,7 @@ RISC-V Assembly, simluating c code.
 2.RISC-V64 five-stage pipelined processor.
 
 ## Project3:
-Virtual memory, TLB, cache, memory simulator.
+Virtual memory, Translation Lookaside Buffer(TLB), cache, memory simulator.
 
 ## Project4:
 Literature review on Computer Organization.
